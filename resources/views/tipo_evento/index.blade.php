@@ -1,18 +1,20 @@
 @extends('layouts.app')
 
 @section('content')
-<h1>Projetos</h1>
-@foreach ($projetos as $projeto)
+<h1>Tipos de Evento</h1>
+@foreach ($tipos_eventos as $tipo_evento)
 <div>
-    <h2>{{ $projeto->nome }}</h2>
-    <p>{{ $projeto->description }}</p>
-    <p>{{ $projeto->tags }}</p>
-    <p>{{ $projeto->logo }}</p>
-    <a href="{{ route('projeto.edit', $projeto) }}">Edit</a>
-    <a href="{{ route('projeto.show', $projeto) }}">View</a>
+    <h2>{{ $tipo_evento->descricao }}</h2>
+    <a href="{{ route('tipo_evento.edit', $tipo_evento) }}">Edit</a>
+    <a href="{{ route('tipo_evento.show', $tipo_evento) }}">View</a>
+    <form action="{{ route('tipo_evento.destroy', $tipo_evento->id) }}" method="POST">
+        @csrf
+        @method('DELETE')
+        <button type="submit">Delete</button>
+    </form>
 </div>
 @endforeach
-<a href="{{ route('projeto.create') }}">Create</a>
+<a href="{{ route('tipo_evento.create') }}">Create</a>
 
 </div>
 @endsection

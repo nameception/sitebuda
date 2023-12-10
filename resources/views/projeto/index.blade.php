@@ -10,6 +10,11 @@
     <p>{{ $projeto->logo }}</p>
     <a href="{{ route('projeto.edit', $projeto) }}">Edit</a>
     <a href="{{ route('projeto.show', $projeto) }}">View</a>
+    <form action="{{ route('projeto.destroy', $projeto->id) }}" method="POST">
+        @csrf
+        @method('DELETE')
+        <button type="submit">Delete</button>
+    </form>
 </div>
 @endforeach
 <a href="{{ route('projeto.create') }}">Create</a>

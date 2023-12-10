@@ -6,15 +6,14 @@
         <div class="col-md-8 offset-md-2">
             <div class="card">
                 <div class="card-header">
-                    <h3>{{ $projeto->nome }}</h3>
+                    <h3>{{ $rede_social->name }}</h3>
                 </div>
                 <div class="card-body">
-                    <p><strong>Descrição:</strong> {{ $projeto->descricao }}</p>
-                    <p><strong>Tags:</strong> {{ $projeto->tags }}</p>
+                    <p><strong>URL:</strong> {{ $rede_social->url }}</p>
                     <p><strong>Logo:</strong></p>
-                    <img src="{{ asset($projeto->logo) }}" alt="Logo">
+                    <img src="{{ asset($rede_social->logo) }}" alt="Logo">
                 </div>
-                <form action="{{ route('projeto.destroy', $projeto->id) }}" method="POST">
+                <form action="{{ route('rede_social.destroy', $rede_social->id) }}" method="POST">
                     @csrf
                     @method('DELETE')
                     <button type="submit">Delete</button>

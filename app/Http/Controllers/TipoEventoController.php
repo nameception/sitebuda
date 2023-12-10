@@ -12,7 +12,8 @@ class TipoEventoController extends Controller
      */
     public function index()
     {
-        $tipoEventos = TipoEvento::all();
+        $tipos_eventos = TipoEvento::all();
+        return view('tipo_evento.index', compact('tipos_eventos'));
     }
 
     /**
@@ -35,34 +36,34 @@ class TipoEventoController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(TipoEvento $tipoEvento)
+    public function show(TipoEvento $tipo_evento)
     {
-        return view('tipo_evento.show', compact('tipoEvento'));
+        return view('tipo_evento.show', compact('tipo_evento'));
     }
 
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(TipoEvento $tipoEvento)
+    public function edit(TipoEvento $tipo_evento)
     {
-        return view('tipo_evento.edit', compact('tipoEvento'));
+        return view('tipo_evento.edit', compact('tipo_evento'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, TipoEvento $tipoEvento)
+    public function update(Request $request, TipoEvento $tipo_evento)
     {
-        $tipoEvento->update($request->all());
+        $tipo_evento->update($request->all());
         return redirect()->route('tipo_evento.index');
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(TipoEvento $tipoEvento)
+    public function destroy(TipoEvento $tipo_evento)
     {
-        $tipoEvento->delete();
+        $tipo_evento->delete();
         return redirect()->route('tipo_evento.index');
     }
 }
