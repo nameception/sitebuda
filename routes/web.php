@@ -19,6 +19,8 @@ Route::resource('/tipo_evento', 'App\Http\Controllers\TipoEventoController');
 
 Route::resource('/rede_social', 'App\Http\Controllers\RedeSocialController');
 
+Route::resource('/texto', 'App\Http\Controllers\TextoController');
+
 Route::get('/', function () {
-    return view('index');
+    return view('welcome');
 });
