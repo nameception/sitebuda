@@ -21,6 +21,8 @@ Route::resource('/rede_social', 'App\Http\Controllers\RedeSocialController');
 
 Route::resource('/texto', 'App\Http\Controllers\TextoController');
 
+Route::resource('/servico', 'App\Http\Controllers\ServicoController');
+
 Route::get('/', function () {
     return view('welcome');
 });

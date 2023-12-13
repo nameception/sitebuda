@@ -10,6 +10,9 @@
         <a href="{{ route('projeto.index') }}"><button>Projeto</button></a>
         <a href="{{ route('rede_social.index') }}"><button>Rede Social</button></a>
         <a href="{{ route('tipo_evento.index') }}"><button>Tipo de Evento</button></a>
+        <a href="{{ route('texto.index') }}"><button>Texto</button></a>
+        <a href="{{ route('servico.index') }}"><button>Serviço</button></a>
+        
     </div>
 </body>
 </html>
