@@ -6,12 +6,13 @@
         <div class="col-md-8 offset-md-2">
             <div class="card">
                 <div class="card-header">
-                    <h3>{{ $rede_social->name }}</h3>
+                    <h3>{{ $preco->titulo }}</h3>
                 </div>
                 <div class="card-body">
-                    <p><strong>URL:</strong> {{ $rede_social->url }}</p>
+                    <p><strong>Observação:</strong> {{ $preco->observacao }}</p>
+                    <p><strong>Preço:</strong> {{ $preco->preco }}</p>
                 </div>
-                <form action="{{ route('rede_social.destroy', $rede_social->id) }}" method="POST">
+                <form action="{{ route('preco.destroy', $preco->id) }}" method="POST">
                     @csrf
                     @method('DELETE')
                     <button type="submit">Delete</button>
