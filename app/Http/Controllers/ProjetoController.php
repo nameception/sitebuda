@@ -29,7 +29,7 @@ class ProjetoController extends Controller
             'logo' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
         ]);
         if ($request->hasFile('logo')) {
-            $logoPath = $request->file('logo')->store('projeto_logos');
+            $logoPath = $request->file('logo')->store('projeto_logos', 'public');
         }
         $projeto = Projeto::create([
             'nome' => $validatedData['nome'],

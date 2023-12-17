@@ -12,7 +12,7 @@
                     <p><strong>Descrição:</strong> {{ $projeto->descricao }}</p>
                     <p><strong>Tags:</strong> {{ $projeto->tags }}</p>
                     <p><strong>Logo:</strong></p>
-                    <img src="{{ asset($projeto->logo) }}" alt="Logo">
+                    <img src="{{ asset('storage/' . $projeto->logo) }}" alt="Logo" style="width: 200px; height: 200px;">
                 </div>
                 <form action="{{ route('projeto.destroy', $projeto->id) }}" method="POST">
                     @csrf

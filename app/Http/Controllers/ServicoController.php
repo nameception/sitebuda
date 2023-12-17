@@ -13,7 +13,7 @@ class ServicoController extends Controller
     public function index()
     {
         $servicos = Servico::all();
-        return view('servicos.index', compact('servicos'));
+        return view('servico.index', compact('servicos'));
     }
 
     /**
@@ -21,7 +21,7 @@ class ServicoController extends Controller
      */
     public function create()
     {
-        return view('servicos.create');
+        return view('servico.create');
     }
 
     /**
@@ -30,7 +30,14 @@ class ServicoController extends Controller
     public function store(Request $request)
     {
         Servico::create($request->all());
-        return redirect()->route('servicos.index');
+        if ($request->hasFile('foto')) {
+            $fotoPath = $request->file('foto')->store('servico_fotos', 'public');
+            $servico = Servico::latest()->first();
+            $servico->update([
+                'foto' => $fotoPath,
+            ]);
+        }
+        return redirect()->route('servico.index');
     }
 
     /**
@@ -38,7 +45,7 @@ class ServicoController extends Controller
      */
     public function show(Servico $servico)
     {
-        return view('servicos.show', compact('servico'));
+        return view('servico.show', compact('servico'));
     }
 
     /**
@@ -46,7 +53,7 @@ class ServicoController extends Controller
      */
     public function edit(Servico $servico)
     {
-        return view('servicos.edit', compact('servico'));
+        return view('servico.edit', compact('servico'));
     }
 
     /**
@@ -55,7 +62,13 @@ class ServicoController extends Controller
     public function update(Request $request, Servico $servico)
     {
         $servico->update($request->all());
-        return redirect()->route('servicos.index');
+        if ($request->hasFile('foto')) {
+            $fotoPath = $request->file('foto')->store('servico_fotos', 'public');
+            $servico->update([
+                'foto' => $fotoPath,
+            ]);
+        }
+        return redirect()->route('servico.index');
     }
 
     /**
@@ -64,6 +77,6 @@ class ServicoController extends Controller
     public function destroy(Servico $servico)
     {
         $servico->delete();
-        return redirect()->route('servicos.index');
+        return redirect()->route('servico.index');
     }
 }

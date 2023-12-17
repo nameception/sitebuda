@@ -7,7 +7,7 @@
     <h2>{{ $projeto->nome }}</h2>
     <p>{{ $projeto->description }}</p>
     <p>{{ $projeto->tags }}</p>
-    <p>{{ $projeto->logo }}</p>
+    <img src="{{ asset('storage/' . $projeto->logo) }}" alt="Logo" style="width: 200px; height: 200px;">
     <a href="{{ route('projeto.edit', $projeto) }}">Edit</a>
     <a href="{{ route('projeto.show', $projeto) }}">View</a>
     <form action="{{ route('projeto.destroy', $projeto->id) }}" method="POST">

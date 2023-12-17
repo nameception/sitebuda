@@ -11,7 +11,7 @@
                 <div class="card-body">
                     <p><strong>Descrição:</strong> {{ $servico->descricao }}</p>
                     <p><strong>Foto:</strong></p>
-                    <img src="{{ asset($servico->foto) }}" alt="Foto">
+                    <img src="{{ asset ('storage/' . $servico->foto) }}" alt="Foto do serviço" style="width: 200px; height: 200px;">
                 </div>
                 <form action="{{ route('servico.destroy', $servico->id) }}" method="POST">
                     @csrf
