@@ -12,6 +12,7 @@
         <a href="{{ route('tipo_evento.index') }}"><button>Tipo de Evento</button></a>
         <a href="{{ route('texto.index') }}"><button>Texto</button></a>
         <a href="{{ route('servico.index') }}"><button>Serviço</button></a>
+        <a href="{{ route('sobre.index') }}"><button>Sobre</button></a>
         
     </div>
 </body>

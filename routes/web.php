@@ -23,6 +23,8 @@ Route::resource('/texto', 'App\Http\Controllers\TextoController');
 
 Route::resource('/servico', 'App\Http\Controllers\ServicoController');
 
+Route::resource('/sobre', 'App\Http\Controllers\SobreController');
+
 Route::get('/', function () {
     return view('welcome');
 });
