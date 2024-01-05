@@ -23,7 +23,11 @@ Route::resource('/texto', 'App\Http\Controllers\TextoController');
 
 Route::resource('/servico', 'App\Http\Controllers\ServicoController');
 
+Route::resource('/preco', 'App\Http\Controllers\PrecoController');
+
 Route::resource('/sobre', 'App\Http\Controllers\SobreController');
+
+Route::resource('/album', 'App\Http\Controllers\AlbumController');
 
 Route::get('/', function () {
     return view('welcome');
